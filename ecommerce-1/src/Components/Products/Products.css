@@ -1,0 +1,72 @@
+.HomeProductCard{
+    display: flex;
+    /* width: 100%; */
+    padding: 5px;
+    height: 200px;
+    box-shadow: 0 0 10px black;
+    border: 1px solid red;
+}
+.ProductImageContainer{
+    width: 50%;
+    margin-right: 10px;
+}
+.HomeProductImage{
+    width: 100%;
+}
+.HomeProductDetailsContainer{
+    width: 50%;
+}
+.HomeProductDesc{
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.HomeProductPrice-CartBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.HomeAddToCartBtn{
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(118, 233, 118);
+}
+.HomeAddToCartBtn:hover {
+    background-color: khaki;
+}
+.HomeProductCounter{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.HomeProductDecrementBtn{
+    padding: 2px 8px;
+    border: 1px solid #000;
+    background: transparent;
+    background-color: rgb(118, 233, 118);
+    border-radius: 50%;
+    font-size: large;
+    cursor: pointer;
+}
+.HomeProductCount{
+    padding: 5px;
+    color: #000;
+    font-size: larger;
+}
+.HomeProductIncrementBtn{
+    padding: 2px 8px;
+    border: 1px solid #000;
+    background: transparent;
+    background-color: rgb(118, 233, 118);
+    border-radius: 50%;
+    font-size: large;
+    cursor: pointer;
+}
+.HomeProductDecrementBtn:hover {
+    background-color: khaki;
+}
+.HomeProductIncrementBtn:hover {
+    background-color: khaki;
+}
