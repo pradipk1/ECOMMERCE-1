@@ -1,38 +1,79 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Products.css';
+import {Link} from 'react-router-dom'
+import {cartAction, decrementProductQuantity, incrementProductQuantity, removeFromCart} from '../Redux/cartAction';
+import { useSelector } from 'react-redux';
 
-function Products() {
+function Products(props) {
 
-    const [productCount, setProductCount] = useState(1);
+    let quantity = useSelector((store) => {
+      let cartItems = store.cart.cartItems;
+      let index;
+      let f = false;
+      for(let i=0; i<cartItems.length; i++) {
+        if(props.productData.id===cartItems[i].id) {
+          index=i;
+          f = true;
+          break;
+        }
+      }
+      if(f) {
+        return cartItems[index].quantity;
+      } else {
+        return 0;
+      }
+      // store.cart.cartItems.map((ele,i) => {
+      //   if(props.productData.id===ele.id) {
+      //     index=i;
+      //   }
+      // });
+      // if(index) {
+      //   console.log(store.cart.cartItems[index].quantity);
+      //   return store.cart.cartItems[index].quantity;
+      // } else {
+      //   return 0;
+      // }
+    })
 
-    let obj = {
-        "id": 1,
-        "title": "iPhone 9",
-        "description": "An apple mobile which is nothing like apple",
-        "price": 549,
-        "discountPercentage": 12.96,
-        "rating": 4.69,
-        "stock": 94,
-        "brand": "Apple",
-        "category": "smartphones",
-        "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
-    }
+    const obj = props.productData;
+
+    // let obj = {
+    //     "id": 1,
+    //     "title": "iPhone 9",
+    //     "description": "An apple mobile which is nothing like apple",
+    //     "price": 549,
+    //     "discountPercentage": 12.96,
+    //     "rating": 4.69,
+    //     "stock": 94,
+    //     "brand": "Apple",
+    //     "category": "smartphones",
+    //     "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+    // }
 
     const handleAddToCart = () => {
-        setProductCount(1);
+        cartAction(props.productData);
     }
 
     const handleDecrement = () => {
-        setProductCount(prev => prev-1);
+        if(quantity===1) {
+          removeFromCart(props.productData);
+        } else {
+          decrementProductQuantity(props.productData);
+        }
+        
+
     }
     const handleIncrement = () => {
-        setProductCount(prev => prev+1);
+        incrementProductQuantity(props.productData);
     }
+
   return (
     <div className='HomeProductCard'>
-      <div className='ProductImageContainer'>
+
+      <Link to='/productdetails' className='ProductImageContainer'>
         <img className='HomeProductImage' src={obj.thumbnail}/>
-      </div>
+      </Link>
+
       <div className='HomeProductDetailsContainer'>
         <h3>{obj.title}</h3>
         <p style={{marginBottom:'8px'}} className='HomeProductDesc'>{obj.description}</p>
@@ -40,20 +81,18 @@ function Products() {
         <div className='HomeProductPrice-CartBtn'>
             <h3 style={{marginBottom:'8px'}}>${obj.price}</h3>
             {
-                productCount<1 ? <button className='HomeAddToCartBtn' onClick={handleAddToCart}>Add to Cart</button> : 
+                quantity<1 ? <button className='HomeAddToCartBtn' onClick={handleAddToCart}>Add to Cart</button> : 
                 <div className='HomeProductCounter'>
                     <button className='HomeProductDecrementBtn' onClick={handleDecrement}>-</button>
-                    <span className='HomeProductCount'>{productCount}</span>
+                    <span className='HomeProductCount'>{quantity}</span>
                     <button className='HomeProductIncrementBtn' onClick={handleIncrement}>+</button>
                 </div>
             }
         </div>
-        
-        
-        
       </div>
+
     </div>
   )
 }
 
-export default Products
+export default Products;

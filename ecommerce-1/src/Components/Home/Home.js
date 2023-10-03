@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
 import Products from '../Products/Products';
+import {useSelector} from 'react-redux';
+import productsAction from '../Redux/productsAction';
 
 function Home() {
   
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState([]);
-  const [filteredItems, setFilteredItems] = useState(products);
+
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  const productsData = useSelector((storeData) => {
+    // console.log(storeData);
+    // setFilteredItems(storeData.products.products);
+    return storeData.products.products;
+  });
+  // setFilteredItems(productsData);
+  // console.log(productsData);
 
   const handleFilter = (selectedCategory) => {
     if(selectedFilters.includes(selectedCategory)) {
@@ -20,19 +31,20 @@ function Home() {
   let filters = ["smartphones","laptops","fragrances","skincare","groceries","home-decoration"];
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products")
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.products);
-      setProducts(data.products);
-    });
-    filterItems();
+
+    if(productsData.length!==0) {
+      setFilteredItems(productsData);
+    }
+
+    productsAction(productsData, setFilteredItems);
+
+    // filterItems();
   }, [selectedFilters])
 
   const filterItems = () => {
     if(selectedFilters.length > 0) {
       let tempItems = selectedFilters.map((selectedCategory) => {
-        let temp = items.filter((item) => item.categoryegory === selectedCategory);
+        let temp = productsData.filter((item) => item.categoryegory === selectedCategory);
         return temp;
       });
       setFilteredItems(tempItems.flat());
@@ -59,11 +71,16 @@ function Home() {
       </div>
 
       <div className='ProductContainer'>
-        <Products />
-        <Products />
-        <Products />
-        <Products />
+        {
+          filteredItems.length > 0 ? 
+            filteredItems.map((ele,i) => (
+              <Products productData={ele} key={`product-${i}`}/>
+            ))
+           : "Loading..."
+        }
+
       </div>
+
     </div>
   )
 }

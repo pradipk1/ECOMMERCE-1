@@ -8,12 +8,9 @@
     flex-direction: column;
     justify-content: space-between;
     height: 80vh;
-    /* align-items: center; */
     border: 1px solid red;
 }
 .FilterButton{
-    /* margin-right: 5px; */
-    /* margin-bottom: 20px; */
     border: 1px solid #000;
     border-radius: 5px;
     padding: 5px 10px;
@@ -29,8 +26,11 @@
 }
 .ProductContainer{
     padding: 20px;
+    /* width: 50%; */
+    border: 1px solid red;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-column-gap: 10px;
+    grid-gap: 10px;
+    
     /* grid-row-gap: -50px; */
 }
