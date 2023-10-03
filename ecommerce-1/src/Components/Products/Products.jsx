@@ -22,18 +22,7 @@ function Products(props) {
       } else {
         return 0;
       }
-      // store.cart.cartItems.map((ele,i) => {
-      //   if(props.productData.id===ele.id) {
-      //     index=i;
-      //   }
-      // });
-      // if(index) {
-      //   console.log(store.cart.cartItems[index].quantity);
-      //   return store.cart.cartItems[index].quantity;
-      // } else {
-      //   return 0;
-      // }
-    })
+    });
 
     const obj = props.productData;
 
