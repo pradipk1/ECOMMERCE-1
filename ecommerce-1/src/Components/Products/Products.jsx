@@ -49,9 +49,8 @@ function Products(props) {
         } else {
           decrementProductQuantity(props.productData);
         }
-        
-
     }
+    
     const handleIncrement = () => {
         incrementProductQuantity(props.productData);
     }
@@ -59,14 +58,14 @@ function Products(props) {
   return (
     <div className='HomeProductCard'>
 
-      <Link to='/productdetails' className='ProductImageContainer'>
+      <Link to={`/productdetails/${obj.id}`} className='ProductImageContainer'>
         <img className='HomeProductImage' src={obj.thumbnail}/>
       </Link>
 
       <div className='HomeProductDetailsContainer'>
         <h3>{obj.title}</h3>
         <p style={{marginBottom:'8px'}} className='HomeProductDesc'>{obj.description}</p>
-        <p style={{marginBottom:'8px'}}>Rating: {obj.rating}</p>
+        <p style={{marginBottom:'8px'}}>Rating: <span className='ProductStar'>{obj.rating}⭐</span></p>
         <div className='HomeProductPrice-CartBtn'>
             <h3 style={{marginBottom:'8px'}}>${obj.price}</h3>
             {

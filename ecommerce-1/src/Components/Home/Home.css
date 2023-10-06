@@ -1,14 +1,18 @@
 .HomeContainer{
     display: flex;
+    padding: 10px;
 }
 .SideBarFiltersContainer{
-    width: 25%;
+    width: 20%;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 80vh;
-    border: 1px solid red;
+    height: 88vh;
+    background-color: #fff;
+    position: sticky;
+    top: 62px;
+    margin-right: 10px;
 }
 .FilterButton{
     border: 1px solid #000;
@@ -25,12 +29,8 @@
     color: aliceblue;
 }
 .ProductContainer{
-    padding: 20px;
-    /* width: 50%; */
-    border: 1px solid red;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-gap: 10px;
-    
-    /* grid-row-gap: -50px; */
+    gap: 10px;
 }

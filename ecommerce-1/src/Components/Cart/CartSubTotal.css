@@ -1,0 +1,41 @@
+.CartPriceTextContainer{
+    font-size: 18px;
+    font-weight: 500;
+    color: #878787;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dfd9d9;
+    margin-bottom: 20px;
+}
+.CartPriceFlexDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.CartTotalAmountDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 1px dashed #dfd9d9;
+    border-top: 1px dashed #dfd9d9;
+    padding: 20px 0;
+}
+.CartPlaceOrderBtnDiv{
+    width: 100%;
+    margin-top: 30px;
+}
+.CartPlaceOrderBtnDiv>button{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #e6b01a;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.CartPlaceOrderBtnDiv>button:hover{
+    background-color: #daa30e;
+}

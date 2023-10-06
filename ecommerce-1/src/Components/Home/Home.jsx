@@ -2,29 +2,30 @@ import React, { useEffect, useState } from 'react'
 import './Home.css'
 import Products from '../Products/Products';
 import {useSelector} from 'react-redux';
-import productsAction from '../Redux/productsAction';
+import {addFilterAction, productsAction, removeFilterAction} from '../Redux/productsAction';
+import Cart from '../Cart/Cart';
 
 function Home() {
   
-  // const [products, setProducts] = useState([]);
-  const [selectedFilters, setSelectedFilters] = useState([]);
+  // const [selectedFilters, setSelectedFilters] = useState([]);
 
   const [filteredItems, setFilteredItems] = useState([]);
 
+  const selectedFilters = useSelector((storeData) => {
+    return storeData.products.selectedFilters;
+  });
+
   const productsData = useSelector((storeData) => {
-    // console.log(storeData);
-    // setFilteredItems(storeData.products.products);
     return storeData.products.products;
   });
-  // setFilteredItems(productsData);
-  // console.log(productsData);
+  // console.log(selectedFilters)
 
   const handleFilter = (selectedCategory) => {
     if(selectedFilters.includes(selectedCategory)) {
       let filters = selectedFilters.filter((ele) => ele !== selectedCategory);
-      setSelectedFilters(filters);
+      removeFilterAction(filters);
     } else {
-      setSelectedFilters([...selectedFilters, selectedCategory]);
+      addFilterAction(selectedCategory);
     }
   }
   
@@ -33,23 +34,21 @@ function Home() {
   useEffect(() => {
 
     if(productsData.length!==0) {
-      setFilteredItems(productsData);
+      filterItems();
+    } else {
+      productsAction(productsData, setFilteredItems);
     }
-
-    productsAction(productsData, setFilteredItems);
-
-    // filterItems();
   }, [selectedFilters])
 
   const filterItems = () => {
     if(selectedFilters.length > 0) {
       let tempItems = selectedFilters.map((selectedCategory) => {
-        let temp = productsData.filter((item) => item.categoryegory === selectedCategory);
+        let temp = productsData.filter((item) => item.category === selectedCategory);
         return temp;
       });
       setFilteredItems(tempItems.flat());
     } else {
-      setFilteredItems([]);
+      setFilteredItems(productsData);
     }
   }
 
@@ -64,7 +63,8 @@ function Home() {
               onClick={() => handleFilter(category)} 
               className={`FilterButton ${
                 selectedFilters.includes(category) ? "active" : ""
-              }`}
+              }`} 
+              key={`filterButton-${i}`}
             >{category.toUpperCase()}</button>
           ))
         }
@@ -76,11 +76,11 @@ function Home() {
             filteredItems.map((ele,i) => (
               <Products productData={ele} key={`product-${i}`}/>
             ))
-           : "Loading..."
+           : <div style={{display:'flex', justifyContent:'center', marginTop:'50px', width:'200%'}}><h3>...Loading...</h3></div>
         }
-
       </div>
 
+      {/* <Cart /> */}
     </div>
   )
 }

@@ -6,22 +6,28 @@ const productsAction = (productsData, setFilteredItems) => {
         .then(res => res.json())
         .then(data => {
             setFilteredItems(data.products);
-            // console.log(data.products);
-            let newData = data.products.map((ele) => {
-                let obj = ele;
-                obj.quantity = 0;
-                return obj;
-            })
-            // console.log(newData);
             reduxStore.dispatch({
                 type:'PRODUCTS',
                 payload:data.products
             });
         });
     } else {
-        // console.log(productsData);
-        setFilteredItems(productsData);
+        // setFilteredItems(productsData);
     }
 }
 
-export default productsAction;
+const addFilterAction = (selectedCategory) => {
+    reduxStore.dispatch({
+        type:'ADDFILTER',
+        payload:selectedCategory
+    })
+}
+
+const removeFilterAction = (selectedCategory) => {
+    reduxStore.dispatch({
+        type:'REMOVEFILTER',
+        payload:selectedCategory
+    })
+}
+
+export {productsAction, addFilterAction, removeFilterAction};

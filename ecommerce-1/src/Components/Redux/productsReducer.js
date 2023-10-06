@@ -1,6 +1,7 @@
 
 let initialData = {
-    products:[]
+    products:[],
+    selectedFilters:[]
 }
 
 const productsReducer = (state = initialData, action) => {
@@ -8,6 +9,16 @@ const productsReducer = (state = initialData, action) => {
         state = {
             ...state,
             products:action.payload
+        }
+    } else if(action.type==='ADDFILTER') {
+        state = {
+            ...state,
+            selectedFilters:[...state.selectedFilters, action.payload]
+        }
+    } else if(action.type==='REMOVEFILTER') {
+        state = {
+            ...state,
+            selectedFilters:action.payload
         }
     }
 
