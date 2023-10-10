@@ -1,6 +1,6 @@
 import React from 'react'
 import './CartProduct.css'
-import { decrementProductQuantity, incrementProductQuantity, removeFromCart } from '../Redux/cartAction';
+import { decrementProductQuantity, incrementProductQuantity, removeFromCart } from '../../Redux/Actions/cartAction';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 

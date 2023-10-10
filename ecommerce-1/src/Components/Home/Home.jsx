@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Home.css'
 import Products from '../Products/Products';
 import {useSelector} from 'react-redux';
-import {addFilterAction, productsAction, removeFilterAction} from '../Redux/productsAction';
+import {addFilterAction, productsAction, removeFilterAction} from '../Redux/Actions/productsAction';
 import Cart from '../Cart/Cart';
 
 function Home() {

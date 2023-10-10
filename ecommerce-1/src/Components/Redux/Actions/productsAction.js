@@ -1,4 +1,4 @@
-import reduxStore from "./ReduxStore";
+import reduxStore from "../ReduxStore";
 
 const productsAction = (productsData, setFilteredItems) => {
     if(productsData.length===0){

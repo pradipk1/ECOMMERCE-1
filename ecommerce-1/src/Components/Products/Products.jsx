@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Products.css';
 import {Link} from 'react-router-dom'
-import {cartAction, decrementProductQuantity, incrementProductQuantity, removeFromCart} from '../Redux/cartAction';
+import {cartAction, decrementProductQuantity, incrementProductQuantity, removeFromCart} from '../Redux/Actions/cartAction';
 import { useSelector } from 'react-redux';
 
 function Products(props) {

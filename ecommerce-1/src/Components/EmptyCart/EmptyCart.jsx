@@ -11,8 +11,8 @@ function EmptyCart() {
                 <img src={cartimage} alt='cartimage'/>
                 <h2>Your Cart is empty.</h2>
             </div>
-            <div className='ContinueShoppingDiv'>
-                <Link className='ContinueShoppingLink' to='/'>←ContinueShopping</Link>
+            <div className='BackToShoppingDiv'>
+                <Link className='BackToShoppingLink' to='/'>←BackToShopping</Link>
             </div>
         </div>
     </div>

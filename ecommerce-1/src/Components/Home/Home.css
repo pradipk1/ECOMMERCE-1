@@ -24,7 +24,7 @@
 .FilterButton:hover {
     box-shadow: 3px 3px 3px 0px #000;
 }
-.active{
+.FilterButton.active{
     background-color: black;
     color: aliceblue;
 }

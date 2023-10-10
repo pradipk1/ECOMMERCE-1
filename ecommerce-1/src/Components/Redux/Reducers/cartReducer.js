@@ -6,7 +6,6 @@ let initialData = {
 
 const cartReducer = (state = initialData, action) => {
     if(action.type==='ADDTOCART') {
-        // console.log(action.payload)
         action.payload.quantity = 1;
         state = {
             ...state,
@@ -48,6 +47,11 @@ const cartReducer = (state = initialData, action) => {
         state = {
             ...state,
             totalCartCount:state.totalCartCount-1
+        }
+    } else if(action.type==='EMPTY') {
+        state = {
+            totalCartCount: 0,
+            cartItems: []
         }
     }
     

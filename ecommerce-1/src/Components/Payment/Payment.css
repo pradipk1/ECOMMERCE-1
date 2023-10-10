@@ -1,0 +1,56 @@
+.PaymentContainer{
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.PaymentMethodContainer{
+    padding: 20px;
+    width: 65%;
+    background-color: #fff;
+}
+.PaymentSelectTextDiv{
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(219, 214, 214);
+}
+.PaymentMethodDiv{
+    padding: 15px;
+}
+.PaymentMethodInputDiv{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.PaymentMethodInputDiv>input{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.PaymentBtnDiv{
+    display: none;
+}
+.PaymentBtnDiv>button{
+    margin-left: 40px;
+}
+.PaymentBtnDiv.active{
+    display: block;
+}
+.PaymentBtnDiv>button{
+    padding: 10px 20px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    background-color: #e6b01a;
+    font-size: 16px;
+    cursor: pointer;
+}
+.PaymentBtnDiv>button:hover{
+    background-color: #daa30e;
+}
+
+.PaymentTotalPriceContainer{
+    width: 30%;
+    padding: 10px;
+    height: 230px;
+    background-color: #fff;
+}

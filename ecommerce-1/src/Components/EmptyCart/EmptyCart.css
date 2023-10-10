@@ -8,6 +8,7 @@
     background-color: #fff;
     padding: 50px;
     margin-top: 50px;
+    box-shadow: 0 0 10px black;
 }
 .EmptyCartDiv{
     width: 100%;
@@ -24,15 +25,15 @@
 .EmptyCartDiv>h2{
     font-size: 40px;
 }
-.ContinueShoppingDiv{
+.BackToShoppingDiv{
     text-align: center;
 }
-.ContinueShoppingLink{
+.BackToShoppingLink{
     text-decoration: none;
     color: rgb(51,51,51);
     font-size: 20px;
     font-weight: 600;
 }
-.ContinueShoppingLink:hover{
+.BackToShoppingLink:hover{
     color: blue;
 }

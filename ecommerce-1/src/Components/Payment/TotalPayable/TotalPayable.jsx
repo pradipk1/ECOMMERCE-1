@@ -1,9 +1,8 @@
 import React from 'react'
-import './CartSubTotal.css'
+import '../../Cart/CartSubTotal/CartSubTotal.css'
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
-function CartSubTotal() {
+function TotalPayable() {
   
     let cartLength = useSelector((store) => {return store.cart.cartItems.length});
     let subTotal = useSelector((store) => {
@@ -13,12 +12,6 @@ function CartSubTotal() {
       });
       return total;
     });
-  
-    const navigate = useNavigate();
-  
-    const handleClick = () => {
-      navigate('/payment');
-    }
   
     return (
       <>
@@ -43,19 +36,16 @@ function CartSubTotal() {
             }
           </span>
         </div>
-        <div className='CartTotalAmountDiv'>
-          <span>Total Amount</span>
+        <div className='CartTotalAmountDiv' style={{borderBottom:'none'}}>
+          <span>Total Payable</span>
           <span>
             {
               subTotal >= 500 ? `$${subTotal}` : `$${subTotal+10}`
             }
           </span>
         </div>
-        <div className='CartPlaceOrderBtnDiv'>
-          <button onClick={handleClick}>Place Order</button>
-        </div>
       </>
     )
 }
 
-export default CartSubTotal;
+export default TotalPayable

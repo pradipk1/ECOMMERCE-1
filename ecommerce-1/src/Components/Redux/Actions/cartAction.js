@@ -1,4 +1,4 @@
-import reduxStore from "./ReduxStore";
+import reduxStore from "../ReduxStore";
 
 const cartAction = (cartData) => {
     // let obj = cartData;

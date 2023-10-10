@@ -1,6 +1,6 @@
 import {legacy_createStore, combineReducers, applyMiddleware} from 'redux';
-import productsReducer from './productsReducer';
-import cartReducer from './cartReducer';
+import productsReducer from './Reducers/productsReducer';
+import cartReducer from './Reducers/cartReducer';
 import logger from 'redux-logger'
 
 const combinedReducer = combineReducers({

@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import './ProductDetails.css'
-import { cartAction, decrementProductQuantity, incrementProductQuantity, removeFromCart } from '../Redux/cartAction';
+import { cartAction, decrementProductQuantity, incrementProductQuantity, removeFromCart } from '../Redux/Actions/cartAction';
 
 function ProductDetails() {
 
