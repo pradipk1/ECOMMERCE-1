@@ -3,12 +3,11 @@ import './Cart.css'
 import EmptyCart from '../EmptyCart/EmptyCart';
 import CartProduct from './CartProduct';
 import { useSelector } from 'react-redux';
-import CartSubToTal from './CartSubTotal'
+import CartSubTotal from './CartSubTotal/CartSubTotal';
 
 
 function Cart(props) {
 
-  // let cart = true;
   const cartItems = useSelector((store) => {
     return store.cart.cartItems;
   });
@@ -32,7 +31,7 @@ function Cart(props) {
             </div>
 
             <div className='cartSubTotalContainer'>
-              <CartSubToTal />
+              <CartSubTotal />
             </div>
 
           </div> 
