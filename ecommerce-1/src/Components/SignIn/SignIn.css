@@ -1,0 +1,62 @@
+.SignInContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.SignInFormDiv{
+    width: 420px;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 10px black;
+}
+.SignInFormText{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.SignInInputContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.SignInInputContainer>input{
+    padding: 13px 15px;
+    font-size: 14px;
+    margin-top: 8px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.SignInButtonDiv{
+    margin-bottom: 20px;
+}
+.SignInButtonDiv>button{
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    background-color: rgb(243, 141, 69);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.SignInButtonDiv>button:hover{
+    background-color: rgb(226, 145, 86);
+}
+.SignInLink{
+    text-decoration: none;
+}
+
+.FormSpan{
+    font-size: 14px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
+.SignInInputContainer > input:invalid[emailBlur="true"], .SignInInputContainer > input:invalid[nameBlur="true"],
+.SignInInputContainer > input:invalid[passwordBlur="true"], .SignInInputContainer > input:invalid[confirmPasswordBlur="true"] {
+    border: 1px solid red;
+}
+.SignInInputContainer > input:invalid[emailBlur="true"] ~ span, .SignInInputContainer > input:invalid[nameBlur="true"] ~ span, 
+.SignInInputContainer > input:invalid[passwordBlur="true"] ~ span, .SignInInputContainer > input:invalid[confirmPasswordBlur="true"] ~ span {
+    display: block;
+}

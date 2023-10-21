@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './CartSubTotal.css'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import loginContext from '../../Context/Context';
 
 function CartSubTotal() {
   
@@ -13,11 +14,22 @@ function CartSubTotal() {
       });
       return total;
     });
+
+    const {userData} = useContext(loginContext);
   
     const navigate = useNavigate();
   
     const handleClick = () => {
-      navigate('/payment');
+      if(userData.isLoggedIn) {
+        navigate('/payment');
+    } else {
+      navigate('/signin', {
+        state: {
+          prevURL: '/cart'
+        }
+      });
+    }
+      
     }
   
     return (

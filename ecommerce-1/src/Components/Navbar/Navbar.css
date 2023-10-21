@@ -8,6 +8,30 @@
     position: sticky;
     top: 0;
 }
+.HomeLogo{
+    display: flex;
+    align-items: center;
+}
+.NavProfileContainer{
+    display: flex;
+    align-items: center;
+}
+.NavSignOutBtn{
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.NavSignOutBtn:hover{
+    color: blue;
+}
+.NavSignInLink{
+    color: white;
+    text-decoration: none;
+}
+.NavSignInLink:hover{
+    color: blue;
+}
 
 .SearchBarContainer{
     display: flex;
