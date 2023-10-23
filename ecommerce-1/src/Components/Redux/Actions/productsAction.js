@@ -1,19 +1,15 @@
 import reduxStore from "../ReduxStore";
 
-const productsAction = (productsData, setFilteredItems) => {
-    if(productsData.length===0){
-        fetch("https://dummyjson.com/products")
-        .then(res => res.json())
-        .then(data => {
-            setFilteredItems(data.products);
-            reduxStore.dispatch({
-                type:'PRODUCTS',
-                payload:data.products
-            });
+const productsAction = (setFilteredItems) => {
+    fetch("https://dummyjson.com/products")
+    .then(res => res.json())
+    .then(data => {
+        setFilteredItems(data.products);
+        reduxStore.dispatch({
+            type:'PRODUCTS',
+            payload:data.products
         });
-    } else {
-        // setFilteredItems(productsData);
-    }
+    });
 }
 
 const addFilterAction = (selectedCategory) => {

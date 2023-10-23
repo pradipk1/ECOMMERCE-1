@@ -36,7 +36,7 @@ function Home() {
     if(productsData.length!==0) {
       filterItems();
     } else {
-      productsAction(productsData, setFilteredItems);
+      productsAction(setFilteredItems);
     }
   }, [selectedFilters])
 

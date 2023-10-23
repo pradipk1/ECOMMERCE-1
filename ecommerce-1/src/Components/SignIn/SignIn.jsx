@@ -6,7 +6,7 @@ import loginContext from '../Context/Context';
 function SignIn() {
 
     const location = useLocation();
-    console.log(location);
+    
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({

@@ -9,7 +9,7 @@ function ProductDetails() {
     const {id} = useParams();
     const productData = useSelector((store) => {
         let data = store.products.products.filter((ele) => ele.id==id);
-        return data[0];
+        return data[0] || {};
     });
 
     let quantity = useSelector((store) => {
@@ -47,27 +47,37 @@ function ProductDetails() {
     }
 
   return (
-    <div className='ProductDetailsFlex'>
-        <div className='ProductDetailsContainer'>
-            <div className='ProductImageContainer'>
-                <img className='ProductImageTag' src={productData.thumbnail} alt={`ProductImage:${id}`}/>
-            </div>
-            <div className='ProductDetailsDiv'>
-                <h3>{productData.title}</h3>
-                <p style={{marginBottom:'10px'}}>{productData.description}</p>
-                <p style={{marginBottom:'10px'}}><b>Rating:</b> <span className='PoductDetailsStar'>{productData.rating}⭐</span></p>
-                <h3 style={{marginBottom:'10px'}}>${productData.price}</h3>
-                {
-                    quantity<1 ? <button className='ProductDetailsAddToCartBtn' onClick={handleAddToCart}>Add to Cart</button> : 
-                    <div className='ProductDetailsProductCounter'>
-                        <button className='ProductDetailsProductDecrementBtn' onClick={handleDecrement}>-</button>
-                        <span className='ProductDetailsProductCount'>{quantity}</span>
-                        <button className='ProductDetailsProductIncrementBtn' onClick={handleIncrement}>+</button>
-                    </div>
-                }
+    <>
+      {
+        Object.keys(productData).length===0 ? 
+        <div style={{textAlign:'center', marginTop:'50px'}}>
+          <h2>OOPs! Something went wrong</h2>
+          <p>Please go back and come back again!</p>
+        </div> 
+        : <div className='ProductDetailsFlex'>
+            <div className='ProductDetailsContainer'>
+                <div className='ProductImageContainer'>
+                    <img className='ProductImageTag' src={productData.thumbnail==='undefined' ? '' : productData.thumbnail} alt={`ProductImage:${id}`}/>
+                </div>
+                <div className='ProductDetailsDiv'>
+                    <h3>{productData.title}</h3>
+                    <p style={{marginBottom:'10px'}}>{productData.description}</p>
+                    <p style={{marginBottom:'10px'}}><b>Rating:</b> <span className='PoductDetailsStar'>{productData.rating}⭐</span></p>
+                    <h3 style={{marginBottom:'10px'}}>${productData.price}</h3>
+                    {
+                        quantity<1 ? <button className='ProductDetailsAddToCartBtn' onClick={handleAddToCart}>Add to Cart</button> : 
+                        <div className='ProductDetailsProductCounter'>
+                            <button className='ProductDetailsProductDecrementBtn' onClick={handleDecrement}>-</button>
+                            <span className='ProductDetailsProductCount'>{quantity}</span>
+                            <button className='ProductDetailsProductIncrementBtn' onClick={handleIncrement}>+</button>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
-    </div>
+      }
+    </>
+    
     
   )
 }

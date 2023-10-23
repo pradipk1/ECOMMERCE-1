@@ -6,7 +6,6 @@ import loginContext from '../Context/Context';
 function Register() {
     
     const location = useLocation();
-    console.log(location);
 
     const [formData, setFormData] = useState({
         name:'',
