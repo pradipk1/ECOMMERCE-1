@@ -22,14 +22,13 @@ function CartSubTotal() {
     const handleClick = () => {
       if(userData.isLoggedIn) {
         navigate('/payment');
-    } else {
-      navigate('/signin', {
-        state: {
-          prevURL: '/cart'
-        }
-      });
-    }
-      
+      } else {
+        navigate('/signin', {
+          state: {
+            prevURL: '/cart'
+          }
+        });
+      }
     }
   
     return (

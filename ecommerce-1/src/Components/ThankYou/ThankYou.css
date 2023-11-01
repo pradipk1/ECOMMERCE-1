@@ -24,3 +24,31 @@
 .ThankYouLink:hover{
     color: blue;
 }
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 520px) {
+    .ThankYouDiv{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .ThankYouContainer{
+        padding: 10px;
+        /* display: block; */
+    }
+    .ThankYouDiv{
+        width: 100%;
+        padding: 10px;
+    }
+    .ThankYouDiv>p{
+        font-weight: 500;
+        font-size: 28px;
+    }
+    .ThankYouLink{
+        font-size: 16px;
+    }
+}

@@ -63,7 +63,7 @@ function Products(props) {
       </Link>
 
       <div className='HomeProductDetailsContainer'>
-        <h3>{obj.title}</h3>
+        <h3 className='HomeProductTitle'>{obj.title}</h3>
         <p style={{marginBottom:'8px'}} className='HomeProductDesc'>{obj.description}</p>
         <p style={{marginBottom:'8px'}}>Rating: <span className='ProductStar'>{obj.rating}⭐</span></p>
         <div className='HomeProductPrice-CartBtn'>

@@ -18,6 +18,11 @@
 .HomeProductDetailsContainer{
     width: 50%;
 }
+.HomeProductTitle{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .HomeProductDesc{
     white-space: nowrap;
     overflow: hidden;
@@ -79,4 +84,25 @@
 }
 .HomeProductIncrementBtn:hover {
     background-color: khaki;
+}
+
+
+/* Media queries */
+
+
+@media screen and (max-width: 360px) {
+    .HomeProductCard{
+        display: block;
+        height: auto;
+    }
+    .ProductImageContainer{
+        width: 100%;
+    }
+    .HomeProductImage{
+        width: 100%;
+        height: 130px;
+    }
+    .HomeProductDetailsContainer{
+        width: 100%;
+    }
 }

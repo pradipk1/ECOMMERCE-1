@@ -17,10 +17,54 @@
 }
 .cartSubTotalContainer{
     width: 27%;
-    height: 325px;
+    height: max-content;
     padding: 20px;
     position: sticky;
     top: 82px;
     background-color: #fff;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+}
+
+
+/* Media Queries */
+
+
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    .CartDiv{
+        width: 60%;
+    }
+    .cartSubTotalContainer{
+        width: 37%;
+    }
+}
+@media screen and (min-width: 550px) and (max-width: 700px) {
+    .CartContainer{
+        padding: 10px;
+    }
+    .CartDiv{
+        width: 55%;
+    }
+    .cartSubTotalContainer{
+        width: 44%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .CartContainer{
+        display: block;
+    }
+    .CartDiv{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .cartSubTotalContainer{
+        width: 100%;
+        position: static;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .CartShoppintTextContainer{
+        font-size: 24px;
+    }
 }

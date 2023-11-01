@@ -17,6 +17,11 @@
 .CartProductDetailsContainer{
     width: 65%;
 }
+.CartProductTitle{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .cartProductDescription{
     white-space: nowrap;
     overflow: hidden;
@@ -67,4 +72,56 @@
 }
 .CartProductDecrementBtn:hover, .CartProductIncrementBtn:hover{
     background-color: khaki;
+}
+
+
+/* Media Queries */
+
+
+@media screen and (min-width: 550px) and (max-width: 700px) {
+    .CartProductCard{
+        display: block;
+        padding: 10px;
+        height: auto;
+    }
+    .CartProductImageContainer>img{
+        height: 110px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 550px) {
+    .CartProductCard{
+        padding: 10px;
+        height: 140px;
+        margin-top: 15px;
+    }
+    .CartProductImageContainer{
+        width: 50%;
+        margin-right: 10px;
+    }
+    .CartProductDetailsContainer{
+        width: 40%;
+    }
+    .CartProductPrice-Btn>h3{
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .CartProductCard{
+        display: block;
+        height: auto;
+        padding: 10px;
+        margin-top: 15px;
+        padding-bottom: 0;
+    }
+    .CartProductPrice-Btn{
+        display: block;
+    }
+    .CartProductPrice-Btn>h3{
+        margin-right: 0;
+    }
+    .CartProductCounter{
+        padding-left: 0;
+    }
 }

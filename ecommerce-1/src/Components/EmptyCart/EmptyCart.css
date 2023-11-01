@@ -37,3 +37,58 @@
 .BackToShoppingLink:hover{
     color: blue;
 }
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 640px) {
+    .EmptyCartContainer{
+        padding: 20px;
+    }
+    .EmptyCartDiv{
+        margin-left: 0;
+    }
+    .EmptyCartContainer>div{
+        width: 100%;
+    }
+    .EmptyCartDiv>h2{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .EmptyCartContainer>div{
+        margin-top: 20px;
+    }
+    .EmptyCartDiv{
+        display: block;
+        text-align: center;
+    }
+    .EmptyCartDiv>img{
+        width: 120px;
+    }
+    .EmptyCartDiv>h2{
+        width: 100%;
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .EmptyCartContainer{
+        padding: 10px;
+    }
+    .EmptyCartContainer>div{
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .EmptyCartDiv>img{
+        width: 90px;
+    }
+    .EmptyCartDiv>h2{
+        font-size: 28px;
+    }
+    .BackToShoppingLink{
+        font-size: 16px;
+    }
+}

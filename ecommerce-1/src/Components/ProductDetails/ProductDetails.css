@@ -1,6 +1,7 @@
 .ProductDetailsFlex {
     /* border: 1px solid red; */
     height: 87vh;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +18,6 @@
 .ProductImageContainer{
     width: 50%;
     height: 100%;
-    /* margin-right: 1em; */
 }
 .ProductImageTag{
     width: 100%;
@@ -75,4 +75,34 @@
 }
 .ProductDetailsProductDecrementBtn:hover, .ProductDetailsProductIncrementBtn:hover{
     background-color: khaki;
+}
+
+
+/* Media Queries */
+
+
+@media screen and (min-width: 666px) and (max-width: 863px) {
+    .ProductDetailsContainer{
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 666px) {
+    .ProductDetailsFlex{
+        display: block;
+        height: auto;
+    }
+    .ProductDetailsContainer{
+        display: block;
+        height: auto;
+        padding: 10px;
+        width: 99%;
+        margin-top: 0;
+    }
+    .ProductImageContainer{
+        width: 100%;
+    }
+    .ProductDetailsDiv{
+        margin-left: 0;
+    }
 }

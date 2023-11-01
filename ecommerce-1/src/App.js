@@ -8,9 +8,9 @@ import loginContext from './Components/Context/Context';
 function App() {
 
   const [userData, setUserData] = useState({
-    userName:'',
-    userEmail:'',
-    userPassword:'',
+    userName:'P',
+    userEmail:'p@k',
+    userPassword:'pkl',
     isLoggedIn: false,
   });
   // console.log(userData);

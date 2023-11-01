@@ -14,6 +14,12 @@
     top: 62px;
     margin-right: 10px;
 }
+.SideBarFiltersDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+}
 .FilterButton{
     border: 1px solid #000;
     border-radius: 5px;
@@ -33,4 +39,45 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 10px;
+}
+
+
+/* Media queries */
+
+
+@media screen and (min-width: 666px) and (max-width: 863px) {
+    .SideBarFiltersContainer{
+        width: 40%;
+    }
+    .ProductContainer {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media screen and (max-width: 666px) {
+    .HomeContainer{
+        display: block;
+        padding-top: 5px;
+    }
+    .SideBarFiltersContainer{
+        width: 100%;
+        position: static;
+        height: auto;
+        padding: 5px;
+    }
+    .SideBarFiltersContainer>h3{
+        margin-bottom: 10px;
+    }
+    .SideBarFiltersDiv{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .FilterButton{
+        margin: 2px;
+    }
+    .ProductContainer{
+        width: 100%;
+        grid-template-columns: repeat(1,1fr);
+    }
 }

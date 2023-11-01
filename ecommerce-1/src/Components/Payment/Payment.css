@@ -30,14 +30,12 @@
 .PaymentBtnDiv{
     display: none;
 }
-.PaymentBtnDiv>button{
-    margin-left: 40px;
-}
 .PaymentBtnDiv.active{
     display: block;
 }
 .PaymentBtnDiv>button{
     padding: 10px 20px;
+    margin-left: 40px;
     border: 1px solid grey;
     border-radius: 3px;
     background-color: #e6b01a;
@@ -53,4 +51,48 @@
     padding: 10px;
     height: 230px;
     background-color: #fff;
+}
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 768px) {
+    .PaymentContainer{
+        padding: 15px;
+    }
+    .PaymentSelectTextDiv{
+        font-size: 20px;
+    }
+    .PaymentMethodContainer{
+        padding: 10px;
+        width: 58%;
+    }
+    .PaymentTotalPriceContainer{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .PaymentContainer{
+        display: block;
+    }
+    .PaymentMethodContainer{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .PaymentTotalPriceContainer{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .PaymentMethodDiv{
+        padding: 10px;
+    }
+    .PaymentBtnDiv>button{
+        margin-left: 20px;
+        padding: 5px;
+        font-size: 14px;
+    }
 }

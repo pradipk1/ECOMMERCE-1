@@ -57,17 +57,20 @@ function Home() {
 
       <div className='SideBarFiltersContainer'>
         <h3 style={{textAlign:'center'}}>Filter By:</h3>
-        {
-          filters.map((category,i)=>(
-            <button
-              onClick={() => handleFilter(category)} 
-              className={`FilterButton ${
-                selectedFilters.includes(category) ? "active" : ""
-              }`} 
-              key={`filterButton-${i}`}
-            >{category.toUpperCase()}</button>
-          ))
-        }
+        <div className='SideBarFiltersDiv'>
+          {
+            filters.map((category,i)=>(
+              <button
+                onClick={() => handleFilter(category)} 
+                className={`FilterButton ${
+                  selectedFilters.includes(category) ? "active" : ""
+                }`} 
+                key={`filterButton-${i}`}
+              >{category.toUpperCase()}</button>
+            ))
+          }
+        </div>
+        
       </div>
 
       <div className='ProductContainer'>

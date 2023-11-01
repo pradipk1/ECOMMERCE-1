@@ -60,3 +60,18 @@
 .SignInInputContainer > input:invalid[passwordBlur="true"] ~ span, .SignInInputContainer > input:invalid[confirmPasswordBlur="true"] ~ span {
     display: block;
 }
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 480px) {
+    .SignInContainer{
+        margin-top: 10px;
+        padding: 10px;
+    }
+    .SignInFormDiv{
+        width: 100%;
+        padding: 15px;
+    }
+}

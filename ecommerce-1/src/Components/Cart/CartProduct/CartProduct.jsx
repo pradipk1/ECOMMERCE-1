@@ -62,7 +62,7 @@ function CartProduct(props) {
                 </Link>
 
                 <div className='CartProductDetailsContainer'>
-                    <h3>{obj.title}</h3>
+                    <h3 className='CartProductTitle'>{obj.title}</h3>
                     <p style={{marginBottom:'8px'}} className='cartProductDescription'>{obj.description}</p>
                     <p style={{marginBottom:'8px'}}>Rating: <span className='CartProductRating'>{obj.rating}⭐</span></p>
                     <div className='CartProductPrice-Btn'>
