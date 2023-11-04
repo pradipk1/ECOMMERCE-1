@@ -4,6 +4,8 @@ import './App.css';
 import AllRoutes from './Components/AllRoutes/AllRoutes';
 import Navbar from './Components/Navbar/Navbar';
 import loginContext from './Components/Context/Context';
+import SidebarNav from './Components/SidebarNav/SidebarNav';
+import Backdrop from './Components/Backdrop/Backdrop';
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
     isLoggedIn: false,
   });
   // console.log(userData);
+
+  const [isSidebarNavOpen, setIsSidebarNavOpen] = useState(false);
 
   const fnRegister = (data) => {
     setUserData(data)
@@ -37,7 +41,11 @@ function App() {
   return (
     <>
       <loginContext.Provider value={{userData, fnRegister, fnLoggedIn, fnLoggedOut}}>
-        <Navbar />
+        <Navbar setIsSidebarNavOpen={setIsSidebarNavOpen}/>
+        <SidebarNav isSidebarNavOpen={isSidebarNavOpen} setIsSidebarNavOpen={setIsSidebarNavOpen}/>
+        {
+          isSidebarNavOpen && <Backdrop setIsSidebarNavOpen={setIsSidebarNavOpen}/>
+        }
         <AllRoutes />
       </loginContext.Provider>
       

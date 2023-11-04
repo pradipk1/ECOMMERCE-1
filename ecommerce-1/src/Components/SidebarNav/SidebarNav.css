@@ -1,0 +1,50 @@
+.SidebarNavContainer{
+    height: 100%;
+    width: 200px;
+    background: white;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    /* border: 1px solid red; */
+    top: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 200;
+    transform: translateX(150%);
+    transition: transform 0.3s ease-in-out;
+}
+.SidebarNavContainer.open {
+    transform: translateX(0);
+}
+.SidebarNavCloseBtn{
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    width: 50px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.SidebarNavCloseBtn img {
+    width: 100%;
+}
+.SidebarNavContainer ul {
+    height: 100%;
+    margin-top: 50px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+.SidebarNavContainer li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.SidebarNavContainer a {
+    text-decoration: none;
+    color: rgb(52, 52, 52);
+}
+.SidebarNavContainer a:hover, 
+.SidebarNavContainer a:active {
+    color: #fa923f;
+}

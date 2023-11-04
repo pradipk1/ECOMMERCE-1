@@ -8,8 +8,9 @@ import loginContext from '../Context/Context';
 import profileLogo from '../../Images/profileLogo.png'
 import cartEmptyAction from '../Redux/Actions/cartEmptyAction';
 import homeLogo from '../../Images/homeLogo.png'
+import menubaricon from '../../Images/menubaricon.png'
 
-function Navbar() {
+function Navbar(props) {
 
   const navTotalCartCount = useSelector((store) => {
     return store.cart.totalCartCount;
@@ -19,22 +20,19 @@ function Navbar() {
 
   const {userData, fnLoggedOut} = useContext(loginContext);
 
-  let linkStyle ={
-      color:"white",
-      textDecoration:"none",
-      marginRight:"50px",
-      marginLeft:"30px",
-  }
-
   const handleSignOut = () => {
     cartEmptyAction();
     fnLoggedOut();
   }
 
+  const handleSidebarNavOpen = () => {
+    props.setIsSidebarNavOpen(true);
+  }
+
   return (
     <>
       <div className='NavbarContainer'>
-        <Link className='HomeLogo' style={linkStyle} to="/">
+        <Link className='NavbarHomeLogo' to="/">
           <img style={{width:'30px'}} src={homeLogo} alt="homeLogo" />
           <span>Home</span>
         </Link>
@@ -63,6 +61,10 @@ function Navbar() {
           <span className='NavCartCount'>{navTotalCartCount}</span>
           <span>Cart</span>
         </Link>
+
+        <button className='NavMenubarBtn' onClick={handleSidebarNavOpen}>
+          <img src={menubaricon} alt="menubaricon" />
+        </button>
       </div>
     </>
     
