@@ -34,7 +34,7 @@ function Navbar(props) {
       <div className='NavbarContainer'>
         <Link className='NavbarHomeLogo' to="/">
           <img style={{width:'30px'}} src={homeLogo} alt="homeLogo" />
-          <span>Home</span>
+          <span style={{fontSize:'18px'}}>Home</span>
         </Link>
 
         <div className='SearchBarContainer'>
@@ -45,9 +45,9 @@ function Navbar(props) {
         {
           userData.isLoggedIn ? 
             <div className='NavProfileContainer'>
-              <div style={{display:'flex', alignItems:'center', marginRight:'50px'}}>
+              <div style={{display:'flex', alignItems:'center', marginRight:'20px'}}>
                 <img style={{width:'25px'}} src={profileLogo} alt="profileLogo" />
-                <span>{userData.userName}</span>
+                <span style={{fontSize:'18px'}}>{userData.userName}</span>
               </div>
               <button className='NavSignOutBtn' onClick={handleSignOut}>SignOut</button>
             </div>

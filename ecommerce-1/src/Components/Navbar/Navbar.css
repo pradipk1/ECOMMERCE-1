@@ -15,26 +15,6 @@
     color: white;
     margin-left: 5px;
 }
-.NavProfileContainer{
-    display: flex;
-    align-items: center;
-}
-.NavSignOutBtn{
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-.NavSignOutBtn:hover{
-    color: blue;
-}
-.NavSignInLink{
-    color: white;
-    text-decoration: none;
-}
-.NavSignInLink:hover{
-    color: blue;
-}
 .SearchBarContainer{
     display: flex;
     align-items: center;
@@ -49,14 +29,34 @@
     border-right: none;
 }
 #SearchBarInput{
-    padding: 11.5px 15px;
+    padding: 11px 15px;
     width: 100%;
     outline: none;
     border-radius: 0 5px 5px 0;
-    border-left: 0;
-    border: 0;
+    border: none;
 }
-
+.NavProfileContainer{
+    display: flex;
+    align-items: center;
+}
+.NavSignOutBtn{
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+.NavSignOutBtn:hover{
+    color: blue;
+}
+.NavSignInLink{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.NavSignInLink:hover{
+    color: blue;
+}
 .CartIconContainer{
     position: relative;
     cursor: pointer;
