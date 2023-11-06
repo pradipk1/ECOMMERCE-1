@@ -8,10 +8,15 @@ import closeLogo from '../../Images/closeLogo.png';
 import loginContext from '../Context/Context';
 import profileLogo from '../../Images/profileLogo.png'
 import cartEmptyAction from '../Redux/Actions/cartEmptyAction';
+import { useSelector } from 'react-redux';
 
 function SidebarNav(props) {
 
     const location = useLocation();
+
+    const sidebarNavTotalCartCount = useSelector((store) => {
+        return store.cart.totalCartCount
+    })
 
     const {userData, fnLoggedOut} = useContext(loginContext);
 
@@ -53,7 +58,7 @@ function SidebarNav(props) {
             }
             <li>
                 <img style={{width:'25px', marginRight:'5px'}} src={cartLogo} alt="cartLogo" />
-                <Link to="/cart" onClick={handleSideNavClose}>Go to Cart</Link>
+                <Link to="/cart" onClick={handleSideNavClose}>Go to Cart ({sidebarNavTotalCartCount})</Link>
             </li>
             {
                 userData.isLoggedIn && <button className='SidebarNavLogoutBtn' onClick={handleSidebarNavLogout}>Logout</button>
