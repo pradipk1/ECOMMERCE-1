@@ -10,9 +10,9 @@ import Backdrop from './Components/Backdrop/Backdrop';
 function App() {
 
   const [userData, setUserData] = useState({
-    userName:'P',
-    userEmail:'p@k',
-    userPassword:'pkl',
+    userName:'',
+    userEmail:'',
+    userPassword:'',
     isLoggedIn: false,
   });
   // console.log(userData);

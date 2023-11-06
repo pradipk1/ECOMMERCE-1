@@ -79,7 +79,7 @@ function Home() {
             filteredItems.map((ele,i) => (
               <Products productData={ele} key={`product-${i}`}/>
             ))
-           : <div style={{display:'flex', justifyContent:'center', marginTop:'50px', width:'200%'}}><h3>...Loading...</h3></div>
+           : <div style={{display:'flex', justifyContent:'center', marginTop:'50px', width:'100%'}}><h3>...Loading Please Wait!...</h3></div>
         }
       </div>
 
